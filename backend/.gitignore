@@ -1,0 +1,16 @@
+.idea/
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Node
+node_modules/
+
+# Production and staging
+dist/
+
+# Temporarily files and folders
+tmp/
+temp/
+yarn.lock
