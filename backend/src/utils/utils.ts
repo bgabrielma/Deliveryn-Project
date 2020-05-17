@@ -38,3 +38,11 @@ export enum ErrorStatusCode {
   INTERNAL_ERROR = 500,
   NOT_FOUND = 404,
 }
+
+/**
+ *
+ * @constants
+ *
+ */
+
+export const EXPRESS_SERVER_PORT_NUMBER = 3000;

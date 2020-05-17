@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import ErrorFactory from '../factories/ErrorFactory';
 
-import { ErrorStatusCode, IBaseMiddleware } from '../utils/core';
+import { ErrorStatusCode, IBaseMiddleware } from '../utils/utils';
 
 export default class ErrorMiddleware implements IBaseMiddleware {
   public performAction(
