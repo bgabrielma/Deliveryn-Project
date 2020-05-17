@@ -1,7 +1,6 @@
-# Awesome Project Build with TypeORM
+# Deliveryn Project API
 
-Steps to run this project:
+Building...
 
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+`Last update: 2020/05/07`
+`bgabrielma`
