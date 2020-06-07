@@ -1,21 +1,32 @@
 import express, { Express } from 'express';
 import Routes from '../config/routes';
 
+import { ConfigureApollo } from '../core/apollo-server';
+
 import ErrorMiddleware from '../middlewares/ErrorMiddleware';
 import NotFoundMiddleware from '../middlewares/NotFoundMiddleware';
 
 import { EXPRESS_SERVER_PORT_NUMBER } from '../utils/utils';
 
-const applyMiddlewares = (app): void => {
-  //
+import cors from 'cors';
+
+const applyMiddlewares = (app: Express) => {
   // Express default middlewares
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
+  // Allow other origins to access
+  app.use(cors());
+
   // routes
   app.use(Routes);
 
-  // Custom middlewares
+  /**
+   * Custom middlewares
+   * */
+
+  // Apollo guide
+  const server = ConfigureApollo(app);
 
   // catch 500 and forward to error handler
   app.use(new ErrorMiddleware().performAction);
@@ -24,7 +35,7 @@ const applyMiddlewares = (app): void => {
   app.use(new NotFoundMiddleware().performAction);
 };
 
-const start = (): void => {
+const start = () => {
   const app = express();
 
   applyMiddlewares(app);

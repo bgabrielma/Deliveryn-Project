@@ -1,8 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  AfterUpdate,
+  BeforeInsert,
+} from 'typeorm';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()
@@ -12,5 +18,30 @@ export class User {
   lastName: string;
 
   @Column()
-  age: number;
+  email: string;
+
+  @Column()
+  providerId: number;
+
+  @Column()
+  password: string;
+
+  @Column()
+  citizenCard: string;
+
+  @Column()
+  createdAt: Date;
+
+  @Column()
+  updatedAt: Date;
+
+  @AfterUpdate()
+  setUpdatedValue() {
+    this.updatedAt = new Date();
+  }
+
+  @BeforeInsert()
+  setInsertedValue() {
+    this.createdAt = this.updatedAt = new Date();
+  }
 }
