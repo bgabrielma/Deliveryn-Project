@@ -10,7 +10,7 @@ import { EXPRESS_SERVER_PORT_NUMBER } from '../utils/utils';
 
 import cors from 'cors';
 
-const applyMiddlewares = (app: Express): void => {
+const applyMiddlewares = (app: Express) => {
   // Express default middlewares
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
@@ -35,7 +35,7 @@ const applyMiddlewares = (app: Express): void => {
   app.use(new NotFoundMiddleware().performAction);
 };
 
-const start = (): void => {
+const start = () => {
   const app = express();
 
   applyMiddlewares(app);
