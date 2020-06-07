@@ -1,4 +1,4 @@
-import express, { Express, RequestHandler } from 'express';
+import express, { Express } from 'express';
 import Routes from '../config/routes';
 
 import { ConfigureApollo } from '../core/apollo-server';
