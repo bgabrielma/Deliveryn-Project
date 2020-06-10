@@ -4,14 +4,19 @@ import {
   Column,
   AfterUpdate,
   BeforeInsert,
+  ManyToOne,
 } from 'typeorm';
 
 import { DateEntity } from './DateEntity';
+import { Role } from './Role';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @ManyToOne(() => Role, (role) => role.id)
+  role: Role;
 
   @Column()
   firstName: string;

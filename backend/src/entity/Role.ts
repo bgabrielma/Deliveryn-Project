@@ -4,7 +4,11 @@ import {
   Column,
   BeforeInsert,
   AfterUpdate,
+  ManyToMany,
+  OneToMany,
 } from 'typeorm';
+
+import { User } from './User';
 
 import { DateEntity } from './DateEntity';
 
@@ -18,4 +22,7 @@ export class Role {
 
   @Column(() => DateEntity, { prefix: false })
   dateEntity: DateEntity;
+
+  @OneToMany(() => User, (user) => user.role)
+  user: User;
 }
