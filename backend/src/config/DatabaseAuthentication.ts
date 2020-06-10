@@ -6,7 +6,7 @@ export const connectionOptions: ConnectionOptions = {
   port: 3306,
   username: 'root',
   password: '',
-  database: 'test',
+  database: 'deliveryn_database',
   synchronize: true,
   logging: false,
   entities: ['dist/entity/**/*.js'],

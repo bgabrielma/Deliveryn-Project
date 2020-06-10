@@ -2,34 +2,19 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  AfterUpdate,
   BeforeInsert,
+  AfterUpdate,
 } from 'typeorm';
 
 import { DateEntity } from './DateEntity';
 
 @Entity()
-export class User {
+export class Role {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
-
-  @Column()
-  email: string;
-
-  @Column()
-  providerId: number;
-
-  @Column()
-  password: string;
-
-  @Column()
-  citizenCard: string;
+  roleDesignation: string;
 
   @Column(() => DateEntity, { prefix: false })
   dateEntity: DateEntity;
