@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile-and-generate": "tsc -w",
-    "nodemon-watch": "nodemon dist/app.js",
-    "dev": "npm-run-all -p -r compile-and-generate nodemon-watch",
+    "dev": "tsc && nodemon dist/src/app.js",
     "start": "ts-node src/index.ts"
   },
   "keywords": [],

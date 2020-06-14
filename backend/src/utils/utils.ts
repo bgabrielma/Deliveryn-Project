@@ -39,6 +39,19 @@ export enum ErrorStatusCode {
   NOT_FOUND = 404,
 }
 
+export enum Provider {
+  FACEBOOK = 'facebook',
+  GOOGLE = 'google',
+  EMAIL = 'email',
+}
+
+export enum StatusType {
+  ACTIVE = 'active',
+  BANNED = 'banned',
+  SUSPENDEND = 'suspended',
+  PENDING_CONFIRMATION = 'pending_confirmation',
+}
+
 /**
  *
  * @constants

@@ -1,9 +1,14 @@
-import { createConnection } from 'typeorm';
+import { createConnection, getConnectionOptions } from 'typeorm';
 
-import { connectionOptions } from '../config/DatabaseAuthentication';
+const start = async () => {
+  const connectionOptions = await getConnectionOptions();
+  const connection = await createConnection(connectionOptions);
 
-const start = () => createConnection(connectionOptions);
-
+  if (!connection.isConnected)
+    throw new Error(
+      'Deliveryn API Project] Could not stablish a connection with database, check connection props'
+    );
+};
 export default () => {
   return {
     start,

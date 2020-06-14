@@ -26,7 +26,7 @@ const applyMiddlewares = (app: Express) => {
    * */
 
   // Apollo guide
-  const server = ConfigureApollo(app);
+  ConfigureApollo(app);
 
   // catch 500 and forward to error handler
   app.use(new ErrorMiddleware().performAction);
