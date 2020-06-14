@@ -1,17 +1,15 @@
-import { ConnectionOptions } from 'typeorm';
-
-export const connectionOptions: ConnectionOptions = {
+module.exports = {
   type: 'mysql',
   host: 'localhost',
   port: 3306,
   username: 'root',
   password: '',
-  database: 'test',
+  database: 'deliveryn_database',
   synchronize: true,
   logging: false,
-  entities: ['dist/entity/**/*.js'],
-  migrations: ['src/migration/**/*.ts'],
-  subscribers: ['src/subscriber/**/*.ts'],
+  entities: ['dist/src/entity/**/*.js'],
+  migrations: ['dist/src/migration/**/*.js'],
+  subscribers: ['dist/src/subscriber/**/*.js'],
   cli: {
     entitiesDir: 'src/entity',
     migrationsDir: 'src/migration',

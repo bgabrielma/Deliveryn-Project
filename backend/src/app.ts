@@ -1,8 +1,5 @@
 import 'reflect-metadata';
 
-// Entities
-import { User } from './entity/User';
-
 // Factories
 import database from './core/database';
 import express from './core/express';
